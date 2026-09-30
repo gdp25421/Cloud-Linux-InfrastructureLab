@@ -1,0 +1,10 @@
+stages:
+  - test
+
+linux-script-test:
+  stage: test
+  image: ubuntu:latest
+  script:
+    - echo "Starting Cloud Linux Infrastructure Lab"
+    - bash linux/system-check.sh
+    - echo "System administration script completed"
