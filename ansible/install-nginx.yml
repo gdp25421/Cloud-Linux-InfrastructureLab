@@ -1,0 +1,16 @@
+---
+- name: Configure Linux Web Server
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Install NGINX
+      package:
+        name: nginx
+        state: present
+
+    - name: Start NGINX service
+      service:
+        name: nginx
+        state: started
+        enabled: true
